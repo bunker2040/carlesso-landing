@@ -1,0 +1,243 @@
+:root {
+    --paper: #f7f2ea;
+    --sand: #ede4d9;
+    --ink: #1d1a1b;
+    --ink-soft: #595051;
+    --accent: #9f7d61;
+    --line: rgba(29, 26, 27, 0.10);
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, var(--paper), #fbf8f4);
+    color: var(--ink);
+}
+a { color: inherit; }
+.container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+.header {
+    border-bottom: 1px solid var(--line);
+    background: rgba(247, 242, 234, 0.88);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
+.header-inner {
+    min-height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.brand {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+.brand-mark {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--ink);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+}
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.brand-copy strong,
+.hero h1,
+.manifesto-copy h2,
+.section-head h2,
+.contact-grid h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+.brand-copy span {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 11px;
+    color: var(--ink-soft);
+}
+.nav {
+    display: inline-flex;
+    gap: 20px;
+}
+.nav a {
+    text-decoration: none;
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+.hero {
+    padding: 72px 0 96px;
+}
+.hero-grid,
+.manifesto-grid,
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    gap: 36px;
+    align-items: start;
+}
+.eyebrow,
+.section-label,
+.path-index {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+}
+.hero h1 {
+    margin: 12px 0 0;
+    font-size: clamp(44px, 7vw, 84px);
+    line-height: 0.95;
+    max-width: 10ch;
+}
+.hero-text,
+.hero-side p,
+.hero-side li,
+.manifesto-copy p,
+.path-card p,
+.quote-text {
+    color: var(--ink-soft);
+    line-height: 1.85;
+}
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.button {
+    padding: 15px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 12px;
+    font-weight: 700;
+}
+.button-primary {
+    background: var(--ink);
+    color: white;
+}
+.button-secondary {
+    border: 1px solid var(--line);
+}
+.hero-side {
+    border-left: 1px solid var(--line);
+    padding-left: 24px;
+}
+.hero-side ul {
+    margin: 18px 0 0;
+    padding-left: 18px;
+}
+.section {
+    padding: 84px 0;
+}
+.manifesto {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.manifesto-stamp {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 9vw, 110px);
+    line-height: 0.86;
+    color: rgba(29, 26, 27, 0.14);
+}
+.manifesto-copy h2,
+.section-head h2,
+.contact-grid h2 {
+    margin: 10px 0 14px;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1;
+    max-width: 12ch;
+}
+.path-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+.path-card {
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--line);
+}
+.path-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    margin: 12px 0 10px;
+}
+.path-card a {
+    display: inline-block;
+    margin-top: 18px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.quote-band {
+    background: #1d1a1b;
+}
+.quote-band-inner {
+    padding: 18px 0;
+}
+.quote-text {
+    margin: 0;
+    color: #d7cdc3;
+    font-size: 19px;
+}
+.contact-box {
+    padding: 28px;
+    background: white;
+    border: 1px solid var(--line);
+}
+.contact-box p {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    color: var(--accent);
+}
+.contact-box a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    text-decoration: none;
+}
+@media (max-width: 900px) {
+    .hero-grid,
+    .manifesto-grid,
+    .contact-grid,
+    .path-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1,
+    .manifesto-copy h2,
+    .section-head h2,
+    .contact-grid h2 {
+        max-width: none;
+    }
+}
+@media (max-width: 760px) {
+    .container { width: min(1160px, calc(100% - 24px)); }
+    .header-inner {
+        flex-direction: column;
+        align-items: start;
+        padding: 16px 0;
+    }
+    .nav {
+        flex-wrap: wrap;
+    }
+    .hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding-left: 0;
+        padding-top: 20px;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
+}
