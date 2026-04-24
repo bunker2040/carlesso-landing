@@ -17,7 +17,7 @@ if (form) {
         if (!form.reportValidity()) return;
 
         if (!N8N_WEBHOOK_URL) {
-            statusNode.textContent = "Formulario preparado, mas ainda falta configurar a URL publica do webhook do n8n.";
+            statusNode.textContent = "Formulario preparado, mas a URL publica do webhook do n8n ainda nao foi configurada.";
             return;
         }
 
@@ -39,9 +39,7 @@ if (form) {
                 })
             });
 
-            if (!response.ok) {
-                throw new Error(`Webhook respondeu ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`Webhook respondeu ${response.status}`);
 
             form.reset();
             utmFields.forEach((field) => {
@@ -51,7 +49,7 @@ if (form) {
             statusNode.textContent = "Dados enviados com sucesso.";
         } catch (error) {
             console.error(error);
-            statusNode.textContent = "Nao foi possivel enviar agora. Use o WhatsApp como caminho principal.";
+            statusNode.textContent = "Nao foi possivel enviar agora. Use o WhatsApp como canal principal.";
         } finally {
             button.disabled = false;
             button.textContent = "Enviar dados";
